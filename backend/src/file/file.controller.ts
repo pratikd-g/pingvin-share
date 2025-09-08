@@ -18,10 +18,14 @@ import { ShareOwnerGuard } from "src/share/guard/shareOwner.guard";
 import { FileService } from "./file.service";
 import { FileSecurityGuard } from "./guard/fileSecurity.guard";
 import * as mime from "mime-types";
+import { NotificationService } from "src/notification/notification.service";
 
 @Controller("shares/:shareId/files")
 export class FileController {
-  constructor(private fileService: FileService) {}
+  constructor(
+    private fileService: FileService,
+    private notificationService: NotificationService,
+  ) {}
 
   @Post()
   @SkipThrottle()
@@ -40,12 +44,16 @@ export class FileController {
     const { id, name, chunkIndex, totalChunks } = query;
 
     // Data can be empty if the file is empty
-    return await this.fileService.create(
+    const file = await this.fileService.create(
       body,
       { index: parseInt(chunkIndex), total: parseInt(totalChunks) },
       { id, name },
       shareId,
     );
+
+    await this.notificationService.sendFileUploadNotification(file);
+
+    return file;
   }
 
   @Get("zip")

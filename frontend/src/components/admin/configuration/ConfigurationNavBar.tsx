@@ -16,6 +16,7 @@ import {
   TbBinaryTree,
   TbBucket,
   TbMail,
+  TbNotification,
   TbScale,
   TbServerBolt,
   TbSettings,
@@ -34,6 +35,7 @@ const categories = [
   { name: "S3", icon: <TbBucket /> },
   { name: "Legal", icon: <TbScale /> },
   { name: "Cache", icon: <TbServerBolt /> },
+  { name: "Notifications", icon: <TbNotification /> },
 ];
 
 const useStyles = createStyles((theme) => ({

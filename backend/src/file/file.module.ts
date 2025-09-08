@@ -6,11 +6,17 @@ import { FileController } from "./file.controller";
 import { FileService } from "./file.service";
 import { LocalFileService } from "./local.service";
 import { S3FileService } from "./s3.service";
+import { NotificationService } from "src/notification/notification.service";
 
 @Module({
   imports: [JwtModule.register({}), ReverseShareModule, ShareModule],
   controllers: [FileController],
-  providers: [FileService, LocalFileService, S3FileService],
+  providers: [
+    FileService,
+    LocalFileService,
+    S3FileService,
+    NotificationService,
+  ],
   exports: [FileService],
 })
 export class FileModule {}

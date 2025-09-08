@@ -35,6 +35,13 @@ export const configVariables = {
       secret: false,
     },
   },
+  notifications: {
+    discordWebhookUrl: {
+      type: "string",
+      secret: true,
+      defaultValue: ""
+    }
+  },
   share: {
     allowRegistration: {
       type: "boolean",

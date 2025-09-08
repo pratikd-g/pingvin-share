@@ -427,6 +427,7 @@ export default {
   "admin.config.category.email": "Email",
   "admin.config.category.smtp": "SMTP",
   "admin.config.category.oauth": "Social Login",
+  "admin.config.category.notifications": "Notifications",
 
   "admin.config.general.app-name": "App name",
   "admin.config.general.app-name.description": "Name of the application",
@@ -696,6 +697,9 @@ export default {
   "admin.config.legal.privacy-policy-url": "Privacy policy URL",
   "admin.config.legal.privacy-policy-url.description":
     "If you already have a privacy policy page you can link it here instead of using the text field.",
+
+  "admin.config.notifications.discord-webhook-url": "Discord Webhook Url",
+  "admin.config.notifications.discord-webhook-url.description": "Set Discord Webhook Url on which the notifications will be send",
 
   // 404
   "404.description": "Oops this page doesn't exist.",

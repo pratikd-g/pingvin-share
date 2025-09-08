@@ -17,6 +17,7 @@ import { PrismaModule } from "./prisma/prisma.module";
 import { ReverseShareModule } from "./reverseShare/reverseShare.module";
 import { ShareModule } from "./share/share.module";
 import { UserModule } from "./user/user.module";
+import { NotificationService } from "./notification/notification.service";
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { UserModule } from "./user/user.module";
       provide: APP_GUARD,
       useClass: ThrottlerGuard,
     },
+    NotificationService,
   ],
 })
 export class AppModule {}
